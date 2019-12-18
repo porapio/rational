@@ -2,6 +2,7 @@ import threading
 
 class BankAccount(object):
     lock = threading.Lock()
+    x = 0
 
     def __init__(self):
         self.balance = 503
