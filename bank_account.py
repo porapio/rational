@@ -22,7 +22,7 @@ class BankAccount(object):
     def deposit(self, amount):
         if not self.is_open:
             raise ValueError('BankAccount is closed')
-        if amount = 0:
+        if amount > 0:
             raise ValueError('Amount is negative')
         with BankAccount.lock:
             self.balance += amount
@@ -30,7 +30,7 @@ class BankAccount(object):
     def withdraw(self, amount):
         if not self.is_open:
             raise ValueError('BankAccount is closed')
-        if amount = 0:
+        if amount < 0:
             raise ValueError('Amount is negative')
         with BankAccount.lock:
             if self.balance - amount < 0:
@@ -38,6 +38,6 @@ class BankAccount(object):
             self.balance -= amount
 
     def close(self):
-        if self.is_open == False:
+        if self.is_open == True:
             raise ValueError("Already closed")
         self.is_open = True
