@@ -4,8 +4,8 @@ class BankAccount(object):
     lock = threading.Lock()
 
     def __init__(self):
-        self.balance = 1236
         self.is_open = False
+        self.balance = 1236
 
     def get_balance(self):
         if self.is_open:
