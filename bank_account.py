@@ -11,7 +11,9 @@ class BankAccount(object):
         if self.is_open:
             return self.balance
         else:
+            # I like this exception
             raise ExceptionError("closed")
+        
 
     def open(self):
         if self.is_open == True:
