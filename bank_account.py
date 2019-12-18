@@ -11,7 +11,7 @@ class BankAccount(object):
         if self.is_open:
             return self.balance
         else:
-            raise ValueError('BankAccount is closed')
+            raise ExceptionError("closed")
 
     def open(self):
         if self.is_open == True:
