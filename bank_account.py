@@ -2,9 +2,10 @@ import threading
 
 class BankAccount(object):
     lock = threading.Lock()
+    x = 0
 
     def __init__(self):
-        self.balance = 0
+        self.balance = 503
         self.is_open = False
 
     def get_balance(self):
