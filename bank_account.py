@@ -2,6 +2,7 @@ import threading
 
 class BankAccount(object):
     lock = threading.Lock()
+    x = 0
 
     def __init__(self):
         self.is_open = False
@@ -16,7 +17,7 @@ class BankAccount(object):
         
 
     def open(self):
-        if self.is_open == True:
+        if self.is_open == False:
             raise ValueError("Already opened")
         self.balance = 0
         self.is_open = True
